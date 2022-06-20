@@ -1,0 +1,68 @@
+<section class="flex flex-col py-6 md:flex-row items-start">
+  <form id="login-form" class="w-11/12 mx-auto card md:w-4/12 md:py-12">
+    <div class="my-6 flex flex-col text-md">
+      <label for="login-email" class="font-bold text-stone-800">
+        Email
+      </label>
+      <input
+        type="email"
+        id="login-email"
+        class="p-2 rounded-md focus:outline-rose-400"
+      />
+    </div>
+    <div class="my-6 flex flex-col text-md">
+      <label for="login-password" class="font-bold text-stone-800">
+        Password
+      </label>
+      <input
+        type="password"
+        id="login-password"
+        minlength="6"
+        class="p-2 rounded-md focus:outline-rose-400"
+      />
+    </div>
+    <button type="submit" class="w-full btn btn-rose">
+      Log In
+    </button>
+  </form>
+  <form id="signup-form" class="w-11/12 mx-auto card md:w-4/12">
+    <h2 class="font-medium text-stone-700 text-xl text-center">
+      New here?
+    </h2>
+    <div class="my-6 flex flex-col text-md">
+      <label for="signup-username" class="font-bold text-stone-800">
+        Username
+      </label>
+      <input
+        type="text"
+        id="signup-username"
+        class="p-2 rounded-md focus:outline-rose-400"
+      />
+    </div>
+    <div class="my-6 flex flex-col text-md">
+      <label for="signup-email" class="font-bold text-stone-800">
+        Email
+      </label>
+      <input
+        type="email"
+        id="signup-email"
+        class="p-2 rounded-md focus:outline-rose-400"
+      />
+    </div>
+    <div class="my-6 flex flex-col text-md">
+      <label for="signup-password" class="font-bold text-stone-800">
+        Password
+      </label>
+      <input
+        type="password"
+        id="signup-password"
+        minlength="6"
+        class="p-2 rounded-md focus:outline-rose-400"
+      />
+    </div>
+    <button type="submit" class="w-full btn btn-rose">
+      Sign Up
+    </button>
+  </form>
+</section>
+<script src="/js/login.js"></script>

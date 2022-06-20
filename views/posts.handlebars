@@ -1,0 +1,31 @@
+<section class="w-11/12 mx-auto">
+  <a href="/posts">
+    <button class="btn w-full mb-4 btn-violet md:hidden">View all posts</button>
+  </a>
+  <div class="flex flex-col mx-auto md:flex-row">
+    <div class="w-full md:w-3/6 flex justify-start items-center">
+      <i class="fas fa-search bg-violet-500 text-lg rounded-lg rounded-r-none text-white p-2"></i>
+      <input type="text" id="searchbar" class="grow text-lg rounded-lg rounded-l-none text-stone-800 p-2 focus:outline-violet-500">
+    </div>
+    <div class="w-full md:w-3/6 flex my-4 md:my-0">
+      <button id="search-title" class="btn btn-violet grow mx-2">Search by title</button>
+      <button id="search-author" class="btn btn-violet grow mx-2">Search by author</button>
+    </div>
+  </div>
+  <p class="text-2xl text-stone-800 md:mt-4">{{message}}</p>
+  <ul class="my-4 grid grid-cols-1 gap-4 md:mt-10 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-12">
+    {{#if posts.length}}
+    {{#each posts as |post|}}
+    <li class="drop-shadow-lg">
+      {{>post-preview post}}
+    </li>
+    {{/each}}
+    {{else}}
+    <li class="text-center mt-4">
+      No posts found
+    </li>
+    {{/if}}
+  </ul>
+</section>
+
+<script src="/js/search.js"></script>
