@@ -1,0 +1,112 @@
+
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    {{! roboto & roboto slab google fonts }}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    
+    {{! font awesome icons }}
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    {{! tailwind build }}
+    <link rel="stylesheet" href="/style.css" />
+    <title>
+      Tech Blog
+    </title>
+  </head>
+  
+  <body
+    class="flex flex-col min-h-full bg-gradient-to-b 
+      {{#if landing}} from-rose-500 to-rose-400 
+      {{else if dashboard}} from-rose-400 to-rose-300
+      {{else}} from-rose-400 to-rose-300 justify-between
+      {{/if}}"
+  >
+    <header class="bg-stone-700 py-3 px-6 z-50">
+      <nav class="container mx-auto flex justify-between align-middle">
+        <a href="/" class="text-3xl nav-item">
+          Tech Blog
+        </a>
+        <div id="nav-menu" class="nav-menu">
+          <a href="/posts" class="nav-item">Posts</a>
+          {{#if loggedIn}}
+            <a href="/dashboard" class="nav-item">Dashboard</a>
+            <a href="/logout" id="logout" class="nav-item">Logout</a>
+          {{else}}
+            <a href="/login" class="nav-item">Login</a>
+          {{/if}}
+        </div>
+        <div class="nav-icon text-2xl z-50 md:hidden" id="overlay-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </header>
+
+    {{#if landing}}
+    <main class="w-screen mb-auto">
+      {{{body}}}
+    </main>
+    <div class="p-4">
+      <p class="text-center text-stone-800 text-sm md:text-base 2xl:text-lg">&copy; 2022
+        <a
+          class="hover:text-stone-300 transition-colors duration-300"
+          href="https://github.com/daliamfarag"
+          target="_blank"
+          rel="noreferrer"
+        >Dalia Farag</a>
+      </p>
+    </div>
+    {{else if dashboard}}
+    <main class="w-screen mt-6 mb-auto">
+      {{{body}}}
+    </main>
+    {{else}}
+    <main class="container mx-auto my-6">
+      {{{body}}}
+    </main>
+    {{/if}}
+
+    <footer class="bg-stone-600 py-3 px-6">
+      <div class="container mx-auto flex justify-between">
+        <a
+          class="nav-icon"
+          href="https://github.com/daliamfarag/MVC_Challenge_TechBlog"
+          title="Visit GitHub repository"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i class="fab fa-github text-lg"></i>
+        </a>
+        <div class="nav-icon" id="scroll-icon" title="Scroll to top">
+          <i class="fa fa-angle-up text-2xl"></i>
+        </div>
+        <a 
+          class="nav-icon"
+          href="mailto:daliamfarag88@gmail.com?subject=MVC-Tech-Blog&body=Hello Dalia,"
+          title="Contact site creator"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i class="far fa-envelope text-lg"></i>
+        </a>
+      </div>
+    </footer>
+    <script src="/js/nav.js"></script>
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+  </body>
+</html>

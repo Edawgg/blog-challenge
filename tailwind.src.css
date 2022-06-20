@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NAV */
+.nav-menu {
+  @apply /* mobile and tablet overlay */
+  absolute pt-20 inset-0 flex flex-col items-center justify-start bg-stone-900 bg-opacity-90 text-3xl -translate-y-full transition duration-300
+  
+  /* medium+ normal menu */
+  md:static md:pt-0 md:flex-row md:justify-evenly md:bg-inherit md:bg-opacity-100 md:text-xl md:translate-y-0 md:w-3/6;
+}
+
+.nav-menu.open {
+  @apply translate-y-0;
+}
+
+.nav-menu .nav-item {
+  @apply my-4 md:my-0;
+}
+
+.nav-item {
+  @apply cursor-pointer w-fit px-1 pb-1 text-white border-rose-400 border-b-4 border-opacity-0 transition-all duration-500 hover:border-opacity-100;
+}
+
+.nav-item.active {
+  @apply border-opacity-100;
+}
+
+.nav-icon {
+  @apply cursor-pointer px-4 flex items-center rounded text-white hover:bg-stone-500 hover:text-rose-300 transition-colors duration-300;
+}
+
+/* HERO */
+.hero-call-to-action {
+  @apply transition-colors duration-300 font-medium text-stone-200 hover:text-rose-400 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl;
+}
+
+/* DASHBOARD */
+.dashboard-h1 {
+  @apply font-bold text-stone-700 lg:text-center
+  text-2xl md:text-3xl xl:text-[2rem] 2xl:text-[2.2rem]
+  sm:col-span-2;
+}
+
+.dashboard-h2 {
+  @apply font-medium text-stone-600 sm:text-right lg:text-left xl:text-center
+  text-xl xl:text-2xl 2xl:text-3xl
+  sm:col-span-4 lg:col-span-2;
+}
+
+.dashboard-toggle {
+  @apply py-2 mx-auto rounded-lg 
+  transition-colors duration-300
+  bg-stone-700 text-white
+  text-base xl:text-lg
+  w-full xl:w-5/6
+  sm:col-span-3 lg:col-span-1;
+}
+
+.dashboard-toggle.active {
+  @apply bg-rose-500 text-stone-300 outline outline-2 outline-stone-800;
+}
+
+.edit-info-form,
+.create-post-form {
+  @apply hidden card gap-6 grid-cols-1 mx-auto w-full xl:w-2/3 2xl:w-1/2;
+}
+
+.edit-info-form {
+  @apply lg:grid-cols-3 lg:items-end;
+}
+
+.edit-input-group {
+  @apply w-full grid grid-cols-1;
+}
+
+.edit-input-group p {
+  @apply text-xs pl-1 lg:text-sm;
+}
+
+.edit-input-group input,
+.create-post-form input {
+  @apply p-2 rounded-md text-sm lg:text-base;
+}
+
+.edit-info-form.active,
+.create-post-form.active {
+  @apply grid;
+}
+
+/* UTIL */
+.card {
+  @apply bg-stone-300 p-5 rounded-lg drop-shadow-md;
+}
+
+.btn {
+  @apply py-2 rounded-lg bg-stone-700 text-white text-lg;
+}
+
+.btn-violet {
+  @apply hover:bg-violet-500 hover:text-stone-800 focus:bg-violet-500 focus:text-stone-800 transition-colors duration-300;
+}
+
+.btn-rose {
+  @apply hover:bg-rose-400 hover:text-stone-800 focus:bg-rose-400 focus:text-stone-800 transition-colors duration-300;
+}
+
+.edit-icon {
+  @apply cursor-pointer text-white hover:text-violet-400 transition-colors duration-500;
+}
+
+.edit-icon.active {
+  @apply text-violet-400;
+}
+
+.delete-icon {
+  @apply cursor-pointer text-white hover:text-rose-400 transition-colors duration-500;
+}
+
+.delete-icon.active {
+  @apply text-rose-400;
+}

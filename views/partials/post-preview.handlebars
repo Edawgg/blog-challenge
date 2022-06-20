@@ -1,0 +1,30 @@
+<article class="card grid grid-cols-2 text-center">
+  <span class="col-start-2 col-end-3 text-right text-xs">
+    {{format_date created_at}}
+  </span>
+  <h2 class="text-lg font-medium col-span-2">
+    {{post_title}}
+  </h2>
+  <a
+    href="/posts/{{id}}"
+    title="view full post"
+    class="bg-stone-700 col-span-2 my-2 rounded-sm px-2 py-4 transition-colors duration-500 hover:bg-violet-400"
+  >
+    <p class="text-left text-sm break-words text-white">
+      {{preview_post_body post_body}}
+    </p>
+  </a>
+  <a
+    href="/posts/?author={{user.username}}"
+    class="text-xs hover:text-violet-700 transition-colors duration-500"
+  >
+    <i class="far fa-user"></i>
+    Author:
+    {{user.username}}
+  </a>
+  <p class="text-xs">
+    Comments:
+    {{comments.length}}
+    <i class="far fa-comment-alt"></i>
+  </p>
+</article>
