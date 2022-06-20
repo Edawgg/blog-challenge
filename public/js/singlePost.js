@@ -1,4 +1,4 @@
-console.log("dog log from single-post")
+console.log("ghost log from single-post")
 
 {
   /* <textarea cols="2" class="col-span-2">
